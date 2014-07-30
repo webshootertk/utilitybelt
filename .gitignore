@@ -1,4 +1,7 @@
-*.swp
-*~
-*.tmp
 .DS_Store
+*~
+*.gz
+*.tmp
+*.swp
+*.pyc
+.hyde_deps
