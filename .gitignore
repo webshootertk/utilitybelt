@@ -5,3 +5,5 @@
 *.swp
 *.pyc
 .hyde_deps
+.user.txt
+.orgs.txt
