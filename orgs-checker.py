@@ -38,11 +38,12 @@ def org_checker(account, organizations):
     orgs_list = get_organizations(organizations)
 
     #I need it for organizations not users...
-    #for orgs in orgs_list
-    repo_list = g.get_user().get_repos();
-    print "%s has %d repos" % (user, repo_count(repo_list))
-    repo_print(repo_list)
-
+    #for orgs.strip() in orgs_list
+    for org in orgs_list:
+        repo_list = g.get_organization(org.strip()).get_repos();
+        print "%s has %d repos" % (org.strip(), repo_count(repo_list))
+        repo_print(repo_list)
+        print ""
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="prints all repos")
