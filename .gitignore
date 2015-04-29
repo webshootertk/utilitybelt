@@ -7,3 +7,6 @@
 .hyde_deps
 .user.txt
 .orgs.txt
+local_settings.py
+.settings
+GitMod.py
