@@ -14,9 +14,10 @@ for org in organizations:
     for repo in repos:
         current_repo = os.path.join(current_directory, repo['name'])
         if os.path.isdir(current_repo):
-            print current_repo
+            print 'fetching: ' + current_repo
             this_repo = Repo(current_repo)
             this_repo.git.fetch('--all')
         else:
             #clone repo
-            print 'no'
+            print 'cloning: ' current_repo
+           
