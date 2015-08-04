@@ -19,5 +19,4 @@ for org in organizations:
             this_repo.git.fetch('--all')
         else:
             #clone repo
-            print 'cloning: ' current_repo
-           
+            print 'cloning: ' + current_repo
