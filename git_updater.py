@@ -1,17 +1,18 @@
 #!/bin/python
 
 import os
-from git import Repo
+# from git import Repo
 from remote_model.github import GithubModel
-from  local_settings import *
+from local_settings import *
 
 
-for org in organizations:
+for org in organizations:aims
     current_org = "/orgs/" + org + "/repos"
     current_directory = base_directoy + org
     repos = GithubModel(current_org)
-
+    print len(repos)
     for repo in repos:
+        print repo
         current_repo = os.path.join(current_directory, repo['name'])
         if os.path.isdir(current_repo):
             print 'fetching: ' + current_repo

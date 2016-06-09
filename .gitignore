@@ -10,3 +10,7 @@
 local_settings.py
 .settings
 GitMod.py
+.idea/
+env/
+output.txt
+
