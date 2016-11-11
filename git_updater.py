@@ -6,7 +6,7 @@ from remote_model.github import GithubModel
 from local_settings import *
 
 
-for org in organizations:aims
+for org in organizations:
     current_org = "/orgs/" + org + "/repos"
     current_directory = base_directoy + org
     repos = GithubModel(current_org)

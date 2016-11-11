@@ -11,9 +11,11 @@ def repo_count(repo_list):
     return count
 
 
-def repo_print(repo_list):
+def repo_update(repo_list, path):
     for repo in repo_list:
         print repo.name
+
+        print path + repo.name.strip()
 
 
 def get_user(account):
@@ -34,6 +36,7 @@ def org_checker(account, organizations):
     user_info = get_user(account)
     user = user_info[0].strip()
     pw = user_info[1].strip()
+    bp = user_info[2].strip()
     g = Github(user, pw)
     orgs_list = get_organizations(organizations)
 
@@ -42,7 +45,8 @@ def org_checker(account, organizations):
     for org in orgs_list:
         repo_list = g.get_organization(org.strip()).get_repos();
         print "%s has %d repos" % (org.strip(), repo_count(repo_list))
-        repo_print(repo_list)
+        path = bp + org + "/"
+        repo_update(repo_list, path)
         print ""
 
 if __name__ == "__main__":
